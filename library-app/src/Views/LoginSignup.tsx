@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import './LoginSignup.css'
+import './LoginSignup.scss'
 
 const user_icon = require('../images/login-Signup-React-Assets/Assets/person.png');
 const email_icon = require('../images/login-Signup-React-Assets/Assets/email.png'); 
