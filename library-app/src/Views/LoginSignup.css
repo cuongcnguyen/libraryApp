@@ -62,7 +62,8 @@ body{
     border: none;
     outline: none;
     background: transparent;
-    
+    width: 285px;
+    padding: 20px 0;    
 }
 
 .forgot-pass{
@@ -81,7 +82,7 @@ body{
 .submit-container{
     display: flex;
     justify-content: space-between;
-    margin-top: 1em;
+    margin-top: 1.5em;
     width: 350px;
 }
 
@@ -93,4 +94,14 @@ body{
     color: white;
     padding: 1em 4em;
     border-radius: 12px;
+}
+
+.submit.gray{
+    background: gray;
+    color: black;
+}
+
+button.submit:hover{
+    background: #eaa451;
+    color: white;
 }
