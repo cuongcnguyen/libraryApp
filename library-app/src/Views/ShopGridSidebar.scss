@@ -1,6 +1,83 @@
-// Test scss
-// $base-color: #c6538c;
 // h1{
 //     color: $base-color;
 // }
+
+// Variable declaration
+$base-color: #1a1668;
+$secondary-color: #eaa451;
+$searchbar-color: #f5f5f5;
+$footer-normalLetter-color: #777777;
+
+//Whole page
+.page-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+// Header
+.header-infobar{
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-infobar-logo{
+    flex: 1;
+}
+.header-infobar-searchbar{
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 9em;
+    background: $searchbar-color;    
+    height: 3em;
+    position: relative;
+}
+.header-infobar-searchbar input{    
+    width: 90%;
+    height: 80%;
+    padding: 0 1.5em;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+.header-infobar-searchbar button{
+    // position: absolute;
+    // right: 0;
+    width: 10%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-infobar-rightnav{
+    flex: 1.5;
+}
+
+.header-infobar-rightnav-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0 2em;
+    gap: 2.5em;
+}
+
+.header-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5em 0;
+}
+
+.header-nav .header-nav-left ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: flex-end;    
+    gap: 2.5em;
+}
+
+
 
