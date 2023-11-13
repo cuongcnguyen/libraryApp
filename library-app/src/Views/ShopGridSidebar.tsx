@@ -80,15 +80,15 @@ const ShopGridSidebar = () => {
                     <p>Bookland is a Book Store Ecommerce Website Template by DexignZone lorem ipsum dolor sit</p>
                     <div className='footer-container-logo-smallIcon'>
                         <ul>
-                            <li><a href="#"><FontAwesomeIcon icon={faFacebook} style={{color: "#eaa451",}} /></a></li>
-                            <li><a href="#"><FontAwesomeIcon icon={faYoutube} style={{color: "#eaa451",}} /></a></li>
-                            <li><a href="#"><FontAwesomeIcon icon={faLinkedin} style={{color: "#eaa451",}} /></a></li>
-                            <li><a href="#"><FontAwesomeIcon icon={faInstagram} style={{color: "#eaa451",}} /></a></li>
+                            <li><a href="#"><FontAwesomeIcon icon={faFacebook} size='2xl' style={{color: "#eaa451",}} /></a></li>
+                            <li><a href="#"><FontAwesomeIcon icon={faYoutube} size='2xl' style={{color: "#eaa451",}} /></a></li>
+                            <li><a href="#"><FontAwesomeIcon icon={faLinkedin} size='2xl' style={{color: "#eaa451",}} /></a></li>
+                            <li><a href="#"><FontAwesomeIcon icon={faInstagram} size='2xl' style={{color: "#eaa451",}} /></a></li>
                         </ul>
                     </div>
                 </div>            
                 <div className="footer-container-ourlinks">
-                    <div className="footer-container-ourlinks-title">Our Links</div>
+                    <div className="footer-container-ourlinks title">Our Links</div>
                     <ul className="footer-container-ourlinks-list">
                         <li className="footer-container-ourlinks-list-item"><a href="#">About Us</a></li>
                         <li className="footer-container-ourlinks-list-item"><a href="#">Contact Us</a></li>
@@ -98,7 +98,7 @@ const ShopGridSidebar = () => {
                     </ul>
                 </div>
                 <div className="footer-container-bookland">
-                    <div className="footer-container-bookland-title">Bookland ?</div>
+                    <div className="footer-container-bookland title">Bookland ?</div>
                     <ul className="footer-container-bookland-list">
                         <li className="footer-container-bookland-list-item"><a href="#">Bookland</a></li>
                         <li className="footer-container-bookland-list-item"><a href="#">Services</a></li>
@@ -108,7 +108,7 @@ const ShopGridSidebar = () => {
                     </ul>
                 </div>
                 <div className="footer-container-resources">
-                    <div className="footer-container-resources-title">Resources</div>
+                    <div className="footer-container-resources title">Resources</div>
                     <ul className="footer-container-resources-list">
                         <li className="footer-container-resources-list-item"><a href="#">Download</a></li>
                         <li className="footer-container-resources-list-item"><a href="#">Help Center</a></li>
@@ -118,7 +118,7 @@ const ShopGridSidebar = () => {
                     </ul>
                 </div>
                 <div className="footer-container-getintouch">
-                    <div className="footer-container-getintouch-title">Get In Touch With Us</div>
+                    <div className="footer-container-getintouch title">Get In Touch With Us</div>
                     <ul className="footer-container-getintouch-list">
                         <li className="footer-container-getintouch-list-item">
                             <FontAwesomeIcon icon={faLocationDot} style={{color: "#eaa451",}} />
