@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       {/* <LoginSignup/> */}
-      <ShopGridSidebar/>
+      <ShopGridSidebar />
     </div>
   );
 }

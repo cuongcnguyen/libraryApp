@@ -1,0 +1,57 @@
+@import '../ShopGridSidebar.scss';
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+  
+.card {    
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background: white;
+    padding: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+
+    .card-details{
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+    }
+    
+    .card-img{
+        margin-bottom: 0.5em;
+    }
+    
+    .card-title{
+        color: $base-color;
+    }
+    
+    .card-genre{
+        color: $secondary-color;
+    }
+
+    .rating-stars{
+        color: $secondary-color;
+    }
+    
+    .card-price .price{
+        font-size: 24px;
+    }
+
+    .card-addToCart{
+        width: 75%;
+        background: $base-color;
+        color: white;
+        font-weight: bold;
+        margin: 0 auto;
+        margin-top: 1em;
+        &:hover{
+            background: $secondary-color;
+        }
+    }
+}
+

@@ -1,0 +1,19 @@
+@import '../ShopGridSidebar.scss';
+
+.sidebar-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 1em;    
+    .sidebar-title{
+        font-size: 1.5em;
+        font-weight: bold;
+        color: $base-color;        
+    }
+    .sidebar-resetFilter{
+        color: $base-color;
+        font-weight: 600;
+        border-color: $base-color;    
+        margin: 0;    
+    }
+}

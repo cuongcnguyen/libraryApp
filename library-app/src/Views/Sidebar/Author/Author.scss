@@ -1,0 +1,22 @@
+@import '../../ShopGridSidebar.scss';
+
+.sidebar-card-wrapper{
+    background: white;
+    padding: 1em;
+}
+
+h3{
+    color: $base-color;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+.sidebar-radio-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;  
+    .sidebar-label-container{
+        display: flex;
+        gap: 0.25em;
+    }  
+}
+

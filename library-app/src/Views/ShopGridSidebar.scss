@@ -5,11 +5,21 @@ $searchbar-color: #f5f5f5;
 $footer-normalLetter-color: #777777;
 
 //Whole page
-.page-container{
+// .page-wrapper{
+//     // width: 1200px;
+//     // margin: 0 auto;
+// }
+
+.container{
     width: 1200px;
     margin: 0 auto;
 }
+
 // Header
+.top-borderbottom{
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 .header-infobar{
     margin-top: 2em;
     display: flex;
@@ -92,9 +102,19 @@ $footer-normalLetter-color: #777777;
     border-radius: 10px;
 }
 
+//MAIN-SIDEBAR
+.bg-gray{
+    background: #f7f7f7;
+    // background: red;
+}
 .main-sidebar{
-    height: 100vh;
-    background: red;
+    display: flex;
+}
+.main-sidebar-sidebar{
+    flex: 1;    
+}
+.main-sidebar-main{
+    flex: 3;
 }
 
 // FOOTER
@@ -107,11 +127,15 @@ footer .footer-container{
         color: $base-color;
         font-weight: bold;
         font-size: 1.25em;
+        margin-bottom: 0.75em;
     }
 }
 
 footer .footer-container .footer-container-logo{
     flex: 1.5;
+    img{
+        margin-bottom: 0.5em;
+    }
 }
 
 footer .footer-container .footer-container-ourlinks{
