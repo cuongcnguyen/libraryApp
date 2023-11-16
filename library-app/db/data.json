@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456",
+      "email": "typicode",
+      "role": "1"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "123456",
+      "email": "typicode",
+      "role": "2"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "image": "/images/book1.jpg",
+      "star": "star here",
+      "title": "Such A Fun Age",
+      "author": "Edward Lee",
+      "rent_times": "5",
+      "price": "$59.95",
+      "genre": "Drama",
+      "position": "A2",
+      "in_stock": "2"        
+    },
+    {
+      "id": 2,
+      "image": "/images/book2.jpg",
+      "star": "star here",
+      "title": "Against The Loveless World",
+      "author": "Susan Abulhawa",
+      "rent_times": "4",
+      "price": "$49.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "3"        
+    },
+    {
+      "id": 3,
+      "image": "/images/book3.jpg",
+      "star": "star here",
+      "title": "Hidden Potential",
+      "author": "Adam Grant",
+      "rent_times": "3",
+      "price": "$39.95",
+      "genre": "Psychology",
+      "position": "B1",
+      "in_stock": "4"        
+    },
+    {
+      "id": 4,
+      "image": "/images/book4.jpg",
+      "star": "star here",
+      "title": "Trillion Dollar Triage",
+      "author": "Nick Timiraos",
+      "rent_times": "2",
+      "price": "$29.95",
+      "genre": "Sci-Fi",
+      "position": "B1",
+      "in_stock": "4"        
+    },
+    {
+      "id": 5,
+      "image": "/images/book3.jpg",
+      "star": "star here",
+      "title": "Hidden Potential",
+      "author": "Adam Grant",
+      "rent_times": "3",
+      "price": "$39.95",
+      "genre": "Psychology",
+      "position": "B1",
+      "in_stock": "4"        
+    },
+    {
+      "id": 6,
+      "image": "/images/book3.jpg",
+      "star": "star here",
+      "title": "Hidden Potential",
+      "author": "Adam Grant",
+      "rent_times": "3",
+      "price": "$39.95",
+      "genre": "Psychology",
+      "position": "B1",
+      "in_stock": "4"        
+    },
+    {
+      "id": 7,
+      "image": "/images/book4.jpg",
+      "star": "star here",
+      "title": "Trillion Dollar Triage",
+      "author": "Nick Timiraos",
+      "rent_times": "2",
+      "price": "$29.95",
+      "genre": "Sci-Fi",
+      "position": "B1",
+      "in_stock": "4"        
+    }
+
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "book_id": "1",
+      "soluong": "2",
+      "user_id": "2"
+    },
+    {
+      "id": 2,
+      "book_id": "3",
+      "soluong": "8",
+      "user_id": "2"
+    }
+  ],
+  "review": []
+}

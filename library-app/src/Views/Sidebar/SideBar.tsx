@@ -3,13 +3,18 @@ import './SideBar.scss'
 import Author from './Author/Author';
 import Genre from './Genre/Genre';
 
-function SideBar() {
+interface Props{
+  handleChange:any;
+}
+
+const SideBar:React.FC<Props> =(props) => {
+  const {handleChange} = props;
   return (
     <>
         <div className="sidebar-wrapper">
             <div className="sidebar-title">Filter Option</div>
-            <Author />
-            <Genre />
+            <Author handleChange={handleChange}/>
+            <Genre handleChange={handleChange} />
             <button className="sidebar-resetFilter btns">Reset Filter</button>
         </div>
         
