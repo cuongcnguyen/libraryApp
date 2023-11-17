@@ -21,18 +21,15 @@ const Card:React.FC<Props> = (props)=> {
       <div className="card-details">
         <h3 className="card-title">{title}</h3>
         <p className="card-genre">{genre}</p>
-        <p className="card-author">{author}</p>
-        
-        
-        <section className="card-review">
+        <p className="card-author">{author}</p>                
+        {/* <section className="card-review">
           <AiFillStar className='rating-stars' /> <AiFillStar className='rating-stars' /> <AiFillStar className='rating-stars' /> <AiFillStar className='rating-stars' />
           
-        </section>
+        </section> */}
         <section className="card-price">
           <div className="price">{price}</div>        
         </section>
-        <p className="card-quantityInStock">Quantity In Stock: {in_stock}</p>
-
+        {/* <p className="card-quantityInStock">Quantity In Stock: {in_stock}</p> */}
         <button className="card-addToCart btns">Add To Cart</button>
 
       </div>

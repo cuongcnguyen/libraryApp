@@ -99,6 +99,19 @@
       "genre": "Sci-Fi",
       "position": "B1",
       "in_stock": "4"        
+    },
+
+    {
+      "id": 8,
+      "image": "/images/book5.jpg",
+      "star": "star here",
+      "title": "Let Us Descend",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "$89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"        
     }
 
   ],

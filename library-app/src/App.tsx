@@ -28,7 +28,6 @@ const App : React.FC = ()=> {
     setQuery(e.target.value)
   }
   const searchedBooks = books.filter((book)=> book.title.toLowerCase().includes(query.toLowerCase()));
-
   // -------------Filter functionality-----------
 
   const handleChange = (e:any) =>{
