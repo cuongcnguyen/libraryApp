@@ -6,6 +6,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Card from './Components/Card';
 import { Book } from './Interface/interface';
+import ShopDetail from './Views/ShopDetail';
 
 
 
@@ -66,8 +67,9 @@ const App : React.FC = ()=> {
     // </div>
     <Router>
       <Routes>
-        <Route path='/' element={<ShopGridSidebar handleChange={handleChange} result={result} query={query} handleInputSearch={handleInputSearch} />}></Route>
+        {/* <Route path='/' element={<ShopGridSidebar handleChange={handleChange} result={result} query={query} handleInputSearch={handleInputSearch} />}></Route> */}
         {/* <Route path='/signup' element={<LoginSignup />}></Route> */}
+        <Route path='/' element={<ShopDetail handleChange={handleChange} query={query} handleInputSearch={handleInputSearch} />}></Route>
 
       </Routes>
     </Router>

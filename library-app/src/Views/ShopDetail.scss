@@ -1,0 +1,117 @@
+@import './ShopGridSidebar.scss';
+
+.row1{
+    padding-top: 4.3em;
+    padding-bottom: 3.7em;
+}
+
+.col{
+    display: flex;    
+}
+
+.book-image{
+    flex: 1;
+}
+
+.book-image img{
+    width: 100%;
+    height: 540px;
+}
+
+.book-content{
+    flex: 2;
+    padding-top: 1em;
+    margin-left: 3.1em;
+}
+
+.book-content-header{
+    margin-bottom: 1.8em;
+}
+
+.book-content-header h3{
+    font-size: 2em;    
+    color: $base-color;
+    margin-bottom: 0.25em;
+}
+
+.book-content-header-rateShare{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-content-header-share ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-content-body-detail ul{
+    display: flex;
+    gap: 4em;
+    margin-bottom: 1.9em;
+}
+
+.book-content-body-detail ul .grayTitle{
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.book-content-body-detail ul p{
+    color: $base-color;
+    font-weight: 600;
+}
+
+.book-content-body p{
+    color: #777;
+    margin-bottom: 1rem;
+
+}
+
+.book-content-body-price{
+    margin-top: 1em;
+    color: $secondary-color;
+    font-size: 3em;
+}
+
+.book-descriptions h3{    
+    color: $base-color;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 0 1.3em 1em;
+}
+
+.book-descriptions table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 27em;
+}
+
+.book-descriptions tr{
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.book-descriptions th, td{
+    padding: 1em;
+    
+}
+
+.book-descriptions {
+    th{
+        padding-left: 2em;
+        color: $base-color;
+    }
+    td{
+        color: #777;
+    }    
+}
+
+.row2{
+    padding-bottom: 3em;
+}
+
+
+
+
