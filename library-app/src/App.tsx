@@ -3,9 +3,9 @@ import './App.css';
 import LoginSignup from './Views/LoginSignup';
 import ShopGridSidebar from './Views/ShopGridSidebar';
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, useOutletContext } from 'react-router-dom';
 import Card from './Components/Card';
-import { Book } from './Interface/interface';
+import { Book, ShopDetailProps, ShopGridSidebarProps } from './Interface/interface';
 import ShopDetail from './Views/ShopDetail';
 
 
@@ -65,15 +65,25 @@ const App : React.FC = ()=> {
     //   {/* <LoginSignup/> */}
     //   <ShopGridSidebar />
     // </div>
-    <Router>
-      <Routes>
-        {/* <Route path='/' element={<ShopGridSidebar handleChange={handleChange} result={result} query={query} handleInputSearch={handleInputSearch} />}></Route> */}
-        {/* <Route path='/signup' element={<LoginSignup />}></Route> */}
-        <Route path='/' element={<ShopDetail handleChange={handleChange} query={query} handleInputSearch={handleInputSearch} />}></Route>
+    // <Router>
+    //   <Routes>
+    //     {/* <Route path='/' element={<ShopGridSidebar handleChange={handleChange} result={result} query={query} handleInputSearch={handleInputSearch} />}></Route> */}
+    //     {/* <Route path='/signup' element={<LoginSignup />}></Route> */}
+    //     <Route path='/' element={<ShopDetail handleChange={handleChange} query={query} handleInputSearch={handleInputSearch} />}></Route>
 
-      </Routes>
-    </Router>
+    //   </Routes>
+    // </Router>
+
+    <Outlet context={{handleChange, query,handleInputSearch,result}} />
   );
 }
 
 export default App;
+
+export function useShopGridSidebarProps(){
+  return useOutletContext<ShopGridSidebarProps>();
+}
+
+export function useShopDetailProps(){
+  return useOutletContext<ShopDetailProps>();
+}

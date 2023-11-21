@@ -6,18 +6,19 @@ import { faFacebook,faYoutube, faLinkedin, faInstagram } from '@fortawesome/free
 import { faHeart} from '@fortawesome/free-regular-svg-icons'
 import Products from './Products/Products';
 import SideBar from './Sidebar/SideBar';
+import { useShopGridSidebarProps } from '../App';
 
-interface Props{
-    handleChange: any;
-    result:any;
-    handleInputSearch: any;
-    query: string;
-}
+// interface Props{
+//     handleChange: any;
+//     result:any;
+//     handleInputSearch: any;
+//     query: string;
+// }
 
 const booklandLogo = require('../images/shop-grid-sidebar-img/logo.png');
 
-const ShopGridSidebar:React.FC<Props> = (props) => {
-    const {handleChange,result,handleInputSearch,query} = props;
+const ShopGridSidebar:React.FC = () => {
+    const {handleChange,result,handleInputSearch,query} = useShopGridSidebarProps();
     return (
         <div className='page-wrapper'>
             <header>

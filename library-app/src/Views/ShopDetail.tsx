@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass,faLocationDot, faPhone, faEnvelope, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook,faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart} from '@fortawesome/free-regular-svg-icons'
+import { useShopDetailProps } from '../App'
 
 const booklandLogo = require('../images/shop-grid-sidebar-img/logo.png');
 
-interface Props{
-  handleChange: any;
-  handleInputSearch: any;
-  query: string;
-}
+// interface Props{
+//   handleChange: any;
+//   handleInputSearch: any;
+//   query: string;
+// }
 
 
-const ShopDetail:React.FC<Props> =(props) => {
-  const {handleChange,handleInputSearch,query} = props;
+const ShopDetail:React.FC =() => {
+  const {handleInputSearch,query} = useShopDetailProps();
   return (
     <div className='page-wrapper'>
       {/* ------------HEADER------------ */}
