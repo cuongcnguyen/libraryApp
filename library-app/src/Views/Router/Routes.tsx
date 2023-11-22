@@ -3,6 +3,7 @@ import App from '../../App'
 import ShopGridSidebar from '../ShopGridSidebar'
 import ShopDetail from '../ShopDetail'
 import LoginSignup from '../LoginSignup'
+import ShopCart from '../ShopCart'
 
 export const Router = createBrowserRouter([
     {
@@ -11,7 +12,8 @@ export const Router = createBrowserRouter([
         children: [
             {path:'', element: <ShopGridSidebar />},
             {path:'shopDetails/:id', element: <ShopDetail />},
-            {path:'signup', element: <LoginSignup />}
+            {path:'signup', element: <LoginSignup />},
+            {path:'shopCart', element: <ShopCart />}
             
         ]
     }

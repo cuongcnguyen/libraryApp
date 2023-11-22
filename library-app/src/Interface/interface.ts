@@ -27,3 +27,8 @@ export interface PaginationProps{
     pagination: any,
     onPageChange(e:any): any
 }
+
+export interface ShopCartProps{
+    query: any,
+    handleInputSearch(e:any): any
+}

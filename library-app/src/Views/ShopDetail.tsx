@@ -38,55 +38,55 @@ const ShopDetail:React.FC =() => {
   return (
     <div className='page-wrapper'>
       {/* ------------HEADER------------ */}
-      <header>
-        <div className="top-borderbottom">
-            <div className="container">
-                <div className="header-infobar">
-                    <div className="header-infobar-logo">
-                        <a href="">
-                            <img src={booklandLogo} alt="" />                        
-                        </a>                    
-                    </div>
-                    <div className="header-infobar-searchbar">
-                        
-                        <input onChange={handleInputSearch} value={query} type="text" placeholder='Search for books'/>
-                        <button type="button">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" style={{color: "#1a1668",}} />
-                        </button>                
-                        
-                    </div>
-                    <div className="header-infobar-rightnav">
-                        <ul className='header-infobar-rightnav-list'>
-                            <li className='header-infobar-rightnav-list-item'>
-                                {/* Heart icon */}
-                                <a href="#">
-                                    <FontAwesomeIcon icon={faHeart} size="2xl" style={{color: "#1a1668",}} />
-                                </a>
-                            </li>
-                            <li className='header-infobar-rightnav-list-item'>
-                                {/* Shopping cart item */}
-                                <a href="#">
-                                    <FontAwesomeIcon icon={faCartShopping} size="2xl" style={{color: "#1a1668",}} />
-                                </a>
-                            </li>
-                            <li className='header-infobar-rightnav-list-item'>
-                                {/* User icon */}
-                                <a href="#">
-                                    <FontAwesomeIcon icon={faUser} size="2xl" style={{color: "#1a1668",}} />
-                                </a>
-                            </li>
-                        </ul>
+        <header>
+                <div className="top-borderbottom">
+                    <div className="container">
+                        <div className="header-infobar">
+                            <div className="header-infobar-logo">
+                                <a href="">
+                                    <img src={booklandLogo} alt="" />                        
+                                </a>                    
+                            </div>
+                            <div className="header-infobar-searchbar">
+                                
+                                <input onChange={handleInputSearch} value={query} type="text" placeholder='Search for books'/>
+                                <button type="button">
+                                    <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" style={{color: "#1a1668",}} />
+                                </button>                
+                                
+                            </div>
+                            <div className="header-infobar-rightnav">
+                                <ul className='header-infobar-rightnav-list'>
+                                    <li className='header-infobar-rightnav-list-item'>
+                                        {/* Heart icon */}
+                                        <a href="#">
+                                            <FontAwesomeIcon icon={faHeart} size="2xl" style={{color: "#1a1668",}} />
+                                        </a>
+                                    </li>
+                                    <li className='header-infobar-rightnav-list-item'>
+                                        {/* Shopping cart item */}
+                                        <a href="#">
+                                            <FontAwesomeIcon icon={faCartShopping} size="2xl" style={{color: "#1a1668",}} />
+                                        </a>
+                                    </li>
+                                    <li className='header-infobar-rightnav-list-item'>
+                                        {/* User icon */}
+                                        <Link to={'/signup'}>
+                                            <FontAwesomeIcon icon={faUser} size="2xl" style={{color: "#1a1668",}} />
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        
-        {/* Main nav */}
-        <div className="container">
-            <div className="header-nav">
-                <div className="header-nav-left">
-                    <ul className="header-nav-left-list">
+                
+                
+                {/* Main nav */}
+                <div className="container">
+                    <div className="header-nav">
+                        <div className="header-nav-left">
+                            <ul className="header-nav-left-list">
                                 {/* <li className="header-nav-left-list-item"><Link to={`/`}><a href="#" className="header-nav-left-list-item-link">Home</a></Link></li> */}
                                 <li className="header-nav-left-list-item"><Link to={'/'}>Home</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">About Us</a></li>
@@ -94,15 +94,15 @@ const ShopDetail:React.FC =() => {
                                 <li className="header-nav-left-list-item"><Link to={'/'}>Shop</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Blog</a></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Contact Us</a></li>
-                    </ul>
+                            </ul>
+                        </div>
+                        <div className="header-nav-rightBtn">
+                            <button>Get In Touch</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="header-nav-rightBtn">
-                    <button>Get In Touch</button>
-                </div>
-            </div>
-        </div>
                 
-      </header>
+        </header>
       
       {/* ---------------MAIN CONTENT------------------ */}
       <div className="bg-gray">

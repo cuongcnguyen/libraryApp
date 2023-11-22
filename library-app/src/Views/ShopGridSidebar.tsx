@@ -51,9 +51,11 @@ const ShopGridSidebar:React.FC = () => {
                                     </li>
                                     <li className='header-infobar-rightnav-list-item'>
                                         {/* Shopping cart item */}
-                                        <a href="#">
+                                        <Link to={'/shopCart'}>
                                             <FontAwesomeIcon icon={faCartShopping} size="2xl" style={{color: "#1a1668",}} />
-                                        </a>
+                                        
+                                        </Link>
+                                        
                                     </li>
                                     <li className='header-infobar-rightnav-list-item'>
                                         {/* User icon */}
@@ -74,10 +76,10 @@ const ShopGridSidebar:React.FC = () => {
                         <div className="header-nav-left">
                             <ul className="header-nav-left-list">
                                 {/* <li className="header-nav-left-list-item"><Link to={`/`}><a href="#" className="header-nav-left-list-item-link">Home</a></Link></li> */}
-                                <li className="header-nav-left-list-item"><Link to={''}>Home</Link></li>
+                                <li className="header-nav-left-list-item"><Link to={'/'}>Home</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">About Us</a></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Pages</a></li>
-                                <li className="header-nav-left-list-item"><Link to={''}>Shop</Link></li>
+                                <li className="header-nav-left-list-item"><Link to={'/'}>Shop</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Blog</a></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Contact Us</a></li>
                             </ul>

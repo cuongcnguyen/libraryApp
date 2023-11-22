@@ -5,7 +5,7 @@ import ShopGridSidebar from './Views/ShopGridSidebar';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Outlet, useOutletContext } from 'react-router-dom';
 import Card from './Components/Card';
-import { Book, PaginationProps, ShopDetailProps, ShopGridSidebarProps } from './Interface/interface';
+import { Book, PaginationProps, ShopCartProps, ShopDetailProps, ShopGridSidebarProps } from './Interface/interface';
 import ShopDetail from './Views/ShopDetail';
 import queryString from 'query-string';
 
@@ -120,4 +120,8 @@ export function useShopDetailProps(){
 
 export function usePaginationProps(){
   return useOutletContext<PaginationProps>();
+}
+
+export function useShopCartProps(){
+  return useOutletContext<ShopCartProps>();
 }
