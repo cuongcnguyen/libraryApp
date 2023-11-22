@@ -9,7 +9,8 @@ export const Router = createBrowserRouter([
         element: <App />,
         children: [
             {path:'', element: <ShopGridSidebar />},
-            {path:'bookDetails/:id', element: <ShopDetail />}
+            {path:'shopDetails/:id', element: <ShopDetail />}
+            
         ]
     }
 ])

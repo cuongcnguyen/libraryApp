@@ -36,11 +36,17 @@
         color: $secondary-color;
     }
 
+    .card-author{
+        color: #777;
+    }
+
     .rating-stars{
         color: $secondary-color;
     }
     
     .card-price .price{
+        color: $secondary-color;
+        font-weight: 600;
         font-size: 24px;
     }
 

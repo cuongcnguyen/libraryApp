@@ -22,3 +22,8 @@ export interface ShopDetailProps{
     query: any,
     handleInputSearch(e:any): any
 }
+
+export interface PaginationProps{
+    pagination: any,
+    onPageChange(e:any): any
+}

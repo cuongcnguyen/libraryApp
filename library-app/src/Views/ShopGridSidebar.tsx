@@ -7,6 +7,8 @@ import { faHeart} from '@fortawesome/free-regular-svg-icons'
 import Products from './Products/Products';
 import SideBar from './Sidebar/SideBar';
 import { useShopGridSidebarProps } from '../App';
+import ReactPaginate from 'react-paginate';
+import Pagination from '../Components/Pagination';
 
 // interface Props{
 //     handleChange: any;
@@ -95,7 +97,12 @@ const ShopGridSidebar:React.FC = () => {
                             
                         <div className="main-sidebar-main">
                             <Products result={result}/>
+
+                            {/* ---------Pagination place--------------- */}
+                            <Pagination />
                         </div>
+
+                        
                     </div>
                 </div>
             </div>

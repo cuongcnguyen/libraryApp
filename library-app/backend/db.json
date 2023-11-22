@@ -112,6 +112,67 @@
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        
+    },
+
+    {
+      "id": 9,
+      "image": "/images/book5.jpg",
+      "star": "star here",
+      "title": "Let Us Descend",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "$89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"        
+    },
+    {
+      "id": 10,
+      "image": "/images/book5.jpg",
+      "star": "star here",
+      "title": "Let Us Descend",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "$89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"        
+    },
+    {
+      "id": 11,
+      "image": "/images/book5.jpg",
+      "star": "star here",
+      "title": "Let Us Descend",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "$89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"        
+    },
+    {
+      "id": 12,
+      "image": "/images/book5.jpg",
+      "star": "star here",
+      "title": "Let Us Descend",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "$89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"        
+    },
+    {
+      "id": 13,
+      "image": "/images/book5.jpg",
+      "star": "star here",
+      "title": "Let Us Descend",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "$89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"        
     }
 
   ],
