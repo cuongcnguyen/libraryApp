@@ -6,7 +6,7 @@ import { faMagnifyingGlass,faLocationDot, faPhone, faEnvelope, faCartShopping, f
 import { faFacebook,faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart} from '@fortawesome/free-regular-svg-icons'
 import { useShopDetailProps } from '../App'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Book } from '../Interface/interface'
 import axios from 'axios'
 
@@ -87,12 +87,13 @@ const ShopDetail:React.FC =() => {
             <div className="header-nav">
                 <div className="header-nav-left">
                     <ul className="header-nav-left-list">
-                        <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Home</a></li>
-                        <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">About Us</a></li>
-                        <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Pages</a></li>
-                        <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Shop</a></li>
-                        <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Blog</a></li>
-                        <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Contact Us</a></li>
+                                {/* <li className="header-nav-left-list-item"><Link to={`/`}><a href="#" className="header-nav-left-list-item-link">Home</a></Link></li> */}
+                                <li className="header-nav-left-list-item"><Link to={'/'}>Home</Link></li>
+                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">About Us</a></li>
+                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Pages</a></li>
+                                <li className="header-nav-left-list-item"><Link to={'/'}>Shop</Link></li>
+                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Blog</a></li>
+                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Contact Us</a></li>
                     </ul>
                 </div>
                 <div className="header-nav-rightBtn">

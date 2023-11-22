@@ -104,6 +104,7 @@ const App : React.FC = ()=> {
     // </Router>
 
     <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange}} />
+    // <LoginSignup/>
   );
 }
 

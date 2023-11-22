@@ -11,12 +11,12 @@ const Pagination = () => {
         }
     }
   return (
-    <div>
-        <button disabled={_page <= 1} onClick={() => handlePageChange(_page - 1) }>
+    <div className='pagination-wrapper'>
+        <button className='pagination-btn' disabled={_page <= 1} onClick={() => handlePageChange(_page - 1) }>
             Prev
         </button>
 
-        <button disabled={_page >= numberOfPages} onClick={() => handlePageChange(_page + 1) }>
+        <button className='pagination-btn' disabled={_page >= numberOfPages} onClick={() => handlePageChange(_page + 1) }>
             Next
         </button>
     </div>

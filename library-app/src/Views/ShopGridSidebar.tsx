@@ -9,6 +9,7 @@ import SideBar from './Sidebar/SideBar';
 import { useShopGridSidebarProps } from '../App';
 import ReactPaginate from 'react-paginate';
 import Pagination from '../Components/Pagination';
+import { Link } from 'react-router-dom';
 
 // interface Props{
 //     handleChange: any;
@@ -56,9 +57,9 @@ const ShopGridSidebar:React.FC = () => {
                                     </li>
                                     <li className='header-infobar-rightnav-list-item'>
                                         {/* User icon */}
-                                        <a href="#">
+                                        <Link to={'/signup'}>
                                             <FontAwesomeIcon icon={faUser} size="2xl" style={{color: "#1a1668",}} />
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -72,10 +73,11 @@ const ShopGridSidebar:React.FC = () => {
                     <div className="header-nav">
                         <div className="header-nav-left">
                             <ul className="header-nav-left-list">
-                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Home</a></li>
+                                {/* <li className="header-nav-left-list-item"><Link to={`/`}><a href="#" className="header-nav-left-list-item-link">Home</a></Link></li> */}
+                                <li className="header-nav-left-list-item"><Link to={''}>Home</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">About Us</a></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Pages</a></li>
-                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Shop</a></li>
+                                <li className="header-nav-left-list-item"><Link to={''}>Shop</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Blog</a></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Contact Us</a></li>
                             </ul>
