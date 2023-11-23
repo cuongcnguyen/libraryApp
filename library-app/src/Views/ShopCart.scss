@@ -1,4 +1,5 @@
 @import './ShopGridSidebar.scss';
+@import './ShopDetail.scss';
 
 .cart-block{
     height: 19em;
@@ -16,3 +17,66 @@
     }
 }
 
+.cart-content{
+    padding-top: 4.4em;
+    padding-bottom: 2.5em;
+        table{
+            width: 100%;
+            vertical-align: middle;
+            border-collapse: collapse;
+            font-weight: 400;
+            thead th{
+                font-weight: 600;
+                padding: 1em;
+                color: white;
+                background: $base-color;
+                text-align: start;
+            }
+    
+            tr{
+                border: 1px solid $table-border-color;
+                td{
+                    font-weight: 500;
+                    color: $base-color;
+                }
+                td.book-item-close .bg{
+                    background: red;
+                }
+            }
+            
+        }    
+}
+
+.table-content{
+    margin-bottom: 3rem;
+}
+
+.table-total-layout{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.table-total{
+    width: 45%;
+    h4.total-title{
+        padding-left: 1.2em;
+        margin-bottom: 1.6em;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: $base-color;
+        border-left: 6px solid $secondary-color;
+        line-height: 1.4;
+    }
+    .total-checkout{
+        margin-top: 1.6em;
+        a{
+            display: inline-block;
+            color: white;
+            background: $secondary-color;
+            padding: 12.5px 20px;
+            line-height: 1.5;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    }
+}

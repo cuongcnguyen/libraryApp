@@ -3,7 +3,7 @@ import './ShopDetail.scss'
 import './ShopGridSidebar.scss'
 import './ShopCart.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass,faLocationDot, faPhone, faEnvelope, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass,faLocationDot, faPhone, faEnvelope, faCartShopping, faUser, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook,faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart} from '@fortawesome/free-regular-svg-icons'
 import { useShopCartProps, useShopDetailProps } from '../App'
@@ -86,7 +86,7 @@ const ShopCart:React.FC = () => {
         </header>
 
         {/* ------------------MAIN CONTENT------------------ */}
-        <div className="page-content">
+        <div className="bg-gray">
             <div className="cart-block">
                 <h1>Cart</h1>
             </div>
@@ -103,9 +103,79 @@ const ShopCart:React.FC = () => {
                                     <th>Close</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+                                <tr>
+                                    <td className="book-item-name">Battle Drive</td>
+                                    <td className='book-item-unitPrice'>$28.00</td>
+                                    <td className='book-item-quantity'></td> 
+                                    <td className='book-item-total'>$28.00</td>
+                                    <td className='book-item-close'>
+                                        <div className="bg">
+                                            <FontAwesomeIcon icon={faXmark} style={{color: "#ffffff",}} />   
+                                        </div>                                         
+                                    </td>                                   
+                                </tr>
+
+                                <tr>
+                                    <td className="book-item-name">Battle Drive</td>
+                                    <td className='book-item-unitPrice'>$28.00</td>
+                                    <td className='book-item-quantity'></td> 
+                                    <td className='book-item-total'>$28.00</td>
+                                    <td className='book-item-close'>
+                                        <div className="bg">
+                                            <FontAwesomeIcon icon={faXmark} style={{color: "#ffffff",}} />   
+                                        </div>                                         
+                                    </td>                                   
+                                </tr>
+                                <tr>
+                                    <td className="book-item-name">Battle Drive</td>
+                                    <td className='book-item-unitPrice'>$28.00</td>
+                                    <td className='book-item-quantity'></td> 
+                                    <td className='book-item-total'>$28.00</td>
+                                    <td className='book-item-close'>
+                                        <div className="bg">
+                                            <FontAwesomeIcon icon={faXmark} style={{color: "#ffffff",}} />   
+                                        </div>                                         
+                                    </td>                                   
+                                </tr>
+                                <tr>
+                                    <td className="book-item-name">Battle Drive</td>
+                                    <td className='book-item-unitPrice'>$28.00</td>
+                                    <td className='book-item-quantity'></td> 
+                                    <td className='book-item-total'>$28.00</td>
+                                    <td className='book-item-close'>
+                                        <div className="bg">
+                                            <FontAwesomeIcon icon={faXmark} style={{color: "#ffffff",}} />   
+                                        </div>                                         
+                                    </td>                                   
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
+
+                    <div className="table-total-layout">
+                        <div className="table-total">
+                            <h4 className="total-title">CART TOTAL</h4>
+                            <table className="total-board">
+                                <tr>
+                                    <td>Shipping</td>
+                                    <td>Free Shipping</td>
+                                </tr>
+                                <tr>
+                                    <td>Coupon</td>
+                                    <td>$0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>$500.00</td>
+                                </tr>
+                            </table>
+                            <div className="total-checkout">
+                                <a href="#" type='button'>Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
