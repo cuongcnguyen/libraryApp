@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface Book{
     id: number,
     image: string,
@@ -11,6 +13,11 @@ export interface Book{
     in_stock: number
 }
 
+export interface CartItem{
+    id: number
+    quantity: number  
+}
+
 export interface ShopGridSidebarProps{
     handleChange(e:any) : any,      
     query: any,
@@ -21,6 +28,7 @@ export interface ShopGridSidebarProps{
 export interface ShopDetailProps{
     query: any,
     handleInputSearch(e:any): any
+    increaseCartQuantity(id:number):void
 }
 
 export interface PaginationProps{
@@ -30,5 +38,14 @@ export interface PaginationProps{
 
 export interface ShopCartProps{
     query: any,
-    handleInputSearch(e:any): any
+    handleInputSearch(e:any): any,
+    children: ReactNode,
+
+    getItemQuantity(id:number) : number,
+    increaseCartQuantity (id:number) : void,
+    decreaseCartQuantity (id:number) : void,
+    removeFromCart (id:number) : void
+    cartQuantity: number
+    cartItems: CartItem[]
+    resultCart:any
 }

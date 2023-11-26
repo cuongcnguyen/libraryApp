@@ -1,15 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
 import LoginSignup from './Views/LoginSignup';
 import ShopGridSidebar from './Views/ShopGridSidebar';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Outlet, useOutletContext } from 'react-router-dom';
 import Card from './Components/Card';
-import { Book, PaginationProps, ShopCartProps, ShopDetailProps, ShopGridSidebarProps } from './Interface/interface';
+import { Book, CartItem, PaginationProps, ShopCartProps, ShopDetailProps, ShopGridSidebarProps } from './Interface/interface';
 import ShopDetail from './Views/ShopDetail';
 import queryString from 'query-string';
+import CardItem from './Components/CartItem';
 
 const App : React.FC = ()=> {
+
+  // -----------------Call API to get all the books in database----------------------
+  const [allBooks, setAllBooks] = useState<Book[]>([]);
+  useEffect(()=>{
+    const getAllBooks = async() =>{
+      const res = await axios.get('http://localhost:8000/books');                
+      setAllBooks(res.data);
+      
+    }
+    getAllBooks();    
+  },[])
+  
   const [books, setBooks] = useState<Book[]>([]);
 
   // -------------All Filter maybe---------
@@ -22,9 +35,8 @@ const App : React.FC = ()=> {
   useEffect(() => {
     const getBook = async() =>{
       const paramsString = queryString.stringify(filters);
-      console.log(paramsString);
       const res = await axios.get(`http://localhost:8000/books?${paramsString}`);
-      console.log(res);
+      
 
       const {data,pagination} = res.data;
       
@@ -32,7 +44,7 @@ const App : React.FC = ()=> {
       setPagination(pagination);
     }
     getBook();    
-  }, [filters]);
+  }, [filters]);  
 
   const [selectedFilter, setSelectedFilter] = useState(null);
   // -----------Search functionality------
@@ -59,7 +71,7 @@ const App : React.FC = ()=> {
 
     return filteredBooks.map(({id,image, title, genre, author, star, price, in_stock})=>(
       <Card 
-        key={Math.random()}
+        key={id}
         id = {id}           
         image = {image}     
         title={title}
@@ -82,12 +94,84 @@ const App : React.FC = ()=> {
   
   
   const handlePageChange = (newPage:any) =>{
-    console.log('New page: ',newPage);
     setFilters({
       ...filters,
       _page: newPage,
     });
   }
+
+  // ---------------HANDLING CART PAGE LOGIC----------------
+  const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const cartQuantity = cartItems.reduce( (quantity,item) => item.quantity+quantity, 0 )
+
+  // ---------Calculate total price of an order--------------------
+  const [totalAmount, setTotalAmount] = useState(0)
+  const getItemQuantity = (id:number) =>{
+    return cartItems.find( item => item.id === id )?.quantity || 0
+  }
+  const increaseCartQuantity = (id:number) =>{
+    setCartItems(currItems =>{
+      //If the currItems is empty then add an item with the id in param and set quantity to 1, otherwise, increment the quantity of that item      
+      if (currItems.find(item =>item.id === id ) == null) {
+        return [...currItems, {id, quantity: 1}]
+      } else {
+        return currItems.map( item =>{
+          if(item.id === id){
+            return {...item, quantity:item.quantity +1 }
+          } else{
+            return item
+          }
+        } )
+      }
+      
+    } )
+
+  }
+
+  const decreaseCartQuantity = (id:number) =>{
+    setCartItems(currItems =>{
+      if (currItems.find(item => item.id === id)?.quantity === 1) {
+        return currItems.filter(item => item.id !== id)
+      } else {
+        return currItems.map( item =>{
+          if(item.id === id){
+            return {...item, quantity:item.quantity -1 }
+          } else{
+            return item
+          }
+        } )
+      }
+      
+    } )
+  }
+  const removeFromCart = (id:number)=>{
+    setCartItems(currItems =>{
+      return currItems.filter(item => item.id !== id)
+    })
+  }
+  
+  
+  // const itemsInCart = useCallback(() => {
+  //   return cartItems.map(item => (
+  //     <CardItem 
+  //       key={item.id}
+  //       {...item}
+  //       library={books}        
+  //     />
+  //   ))
+  // },[cartItems] )
+  const itemsInCart = () =>{
+    return cartItems.map(item => (
+      <CardItem 
+        key={item.id}
+        {...item}
+        library={allBooks}        
+      />
+    ))
+    
+  }
+  const resultCart = itemsInCart();
+
 
   return (
     // <div className="App">
@@ -103,8 +187,7 @@ const App : React.FC = ()=> {
     //   </Routes>
     // </Router>
 
-    <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange}} />
-    // <LoginSignup/>
+    <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange, getItemQuantity,increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, resultCart}} />
   );
 }
 
@@ -125,3 +208,4 @@ export function usePaginationProps(){
 export function useShopCartProps(){
   return useOutletContext<ShopCartProps>();
 }
+

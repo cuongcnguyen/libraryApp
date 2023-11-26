@@ -1,0 +1,23 @@
+.header-infobar-rightnav-list-item .cart{
+    width: 36px;
+    height: 32px;
+    position: relative;
+
+}
+
+.header-infobar-rightnav-list-item .cartNoti{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background: red;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    transform: translateX(60%) translateY(60%);
+}

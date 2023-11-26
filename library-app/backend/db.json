@@ -23,7 +23,7 @@
       "title": "Such A Fun Age",
       "author": "Edward Lee",
       "rent_times": "5",
-      "price": "$59.95",
+      "price": "59.95",
       "genre": "Drama",
       "position": "A2",
       "in_stock": "2"        
@@ -35,7 +35,7 @@
       "title": "Against The Loveless World",
       "author": "Susan Abulhawa",
       "rent_times": "4",
-      "price": "$49.95",
+      "price": "49.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "3"        
@@ -47,7 +47,7 @@
       "title": "Hidden Potential",
       "author": "Adam Grant",
       "rent_times": "3",
-      "price": "$39.95",
+      "price": "39.95",
       "genre": "Psychology",
       "position": "B1",
       "in_stock": "4"        
@@ -59,7 +59,7 @@
       "title": "Trillion Dollar Triage",
       "author": "Nick Timiraos",
       "rent_times": "2",
-      "price": "$29.95",
+      "price": "29.95",
       "genre": "Sci-Fi",
       "position": "B1",
       "in_stock": "4"        
@@ -71,7 +71,7 @@
       "title": "Hidden Potential",
       "author": "Adam Grant",
       "rent_times": "3",
-      "price": "$39.95",
+      "price": "39.95",
       "genre": "Psychology",
       "position": "B1",
       "in_stock": "4"        
@@ -83,7 +83,7 @@
       "title": "Hidden Potential",
       "author": "Adam Grant",
       "rent_times": "3",
-      "price": "$39.95",
+      "price": "39.95",
       "genre": "Psychology",
       "position": "B1",
       "in_stock": "4"        
@@ -95,7 +95,7 @@
       "title": "Trillion Dollar Triage",
       "author": "Nick Timiraos",
       "rent_times": "2",
-      "price": "$29.95",
+      "price": "29.95",
       "genre": "Sci-Fi",
       "position": "B1",
       "in_stock": "4"        
@@ -108,7 +108,7 @@
       "title": "Let Us Descend",
       "author": "Edward Lee",
       "rent_times": "8",
-      "price": "$89.95",
+      "price": "89.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        
@@ -121,7 +121,7 @@
       "title": "Let Us Descend",
       "author": "Edward Lee",
       "rent_times": "8",
-      "price": "$89.95",
+      "price": "89.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        
@@ -133,7 +133,7 @@
       "title": "Let Us Descend",
       "author": "Edward Lee",
       "rent_times": "8",
-      "price": "$89.95",
+      "price": "89.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        
@@ -145,7 +145,7 @@
       "title": "Let Us Descend",
       "author": "Edward Lee",
       "rent_times": "8",
-      "price": "$89.95",
+      "price": "89.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        
@@ -157,7 +157,7 @@
       "title": "Let Us Descend",
       "author": "Edward Lee",
       "rent_times": "8",
-      "price": "$89.95",
+      "price": "89.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        
@@ -169,7 +169,7 @@
       "title": "Let Us Descend",
       "author": "Edward Lee",
       "rent_times": "8",
-      "price": "$89.95",
+      "price": "89.95",
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"        

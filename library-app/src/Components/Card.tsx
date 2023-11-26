@@ -2,6 +2,7 @@ import React from 'react'
 import {AiFillStar} from 'react-icons/ai'
 import { Book } from '../Interface/interface'
 import { Link } from 'react-router-dom';
+import { formatCurrency } from '../utils/formatCurrency';
 
 interface Props{  
   id: number;
@@ -30,10 +31,11 @@ const Card:React.FC<Props> = (props)=> {
             
           </section> */}
           <section className="card-price">
-            <div className="price">{price}</div>        
+            <div className="price">{formatCurrency(Number(price))}</div>        
           </section>
           {/* <p className="card-quantityInStock">Quantity In Stock: {in_stock}</p> */}
-          <button className="card-addToCart btns">Add To Cart</button>
+          
+          {/* <button className="card-addToCart btns">Add To Cart</button> */}
 
         </div>
       </Link>

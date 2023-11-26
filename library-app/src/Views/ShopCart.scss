@@ -39,8 +39,23 @@
                     font-weight: 500;
                     color: $base-color;
                 }
+                td .change-quantity{
+                    display: flex;
+                    button{
+                        padding: 0 1em;   
+                        font-size: 1.25em;   
+                        border: 1px solid $table-border-color;
+                        background: lightgray;                                          
+                    }
+                    span{
+                        padding: 0.5em 1.25em;
+                        border: 1px solid $table-border-color;
+                    }
+                }
                 td.book-item-close .bg{
-                    background: red;
+                    background: #ff1e6f;
+                    padding: 1em;
+                    border: none;
                 }
             }
             
