@@ -16,7 +16,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import ListItemText from "@mui/material/ListItemText";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import UserManagement from './UserManagement';
+import UserManagement from './UserManagement/UserManagement';
+
 
 const drawerWidth=240;
 
@@ -99,7 +100,7 @@ const AdminAction = () => {
     
       const handleLogOut = () => {
         localStorage.clear();
-        navigate("/signup");
+        navigate("/");
       };
       const handleDrawerClose = () => {
         setOpen(false);

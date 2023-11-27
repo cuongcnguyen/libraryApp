@@ -50,13 +50,10 @@ const LoginSignup = () => {
             if (resp[0].password === values.password) {
               if (resp[0].role === "1") {
                 localStorage.setItem("userInfor", resp[0]);
-                alert("You are an admin");
+                navigate("/admin");
               } else {
                 // user dashboard
-                //alert("Only admins have access to this site");
-                localStorage.setItem("userInfor", resp[0]);
-                navigate("/");
-                
+                alert("Only admins have access to this site");                                
               }
             } else {
               alert("Wrong password");
@@ -128,4 +125,4 @@ const LoginSignup = () => {
   )
 }
 
-export default LoginSignup;
+export default LoginSignup

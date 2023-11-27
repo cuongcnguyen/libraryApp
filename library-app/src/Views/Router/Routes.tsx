@@ -4,7 +4,7 @@ import ShopGridSidebar from '../ShopGridSidebar'
 import ShopDetail from '../ShopDetail'
 import LoginSignup from '../LoginSignup'
 import ShopCart from '../ShopCart'
-import AdminAction from '../../ViewsAdmin/AdminAction'
+
 
 export const Router = createBrowserRouter([
     {
@@ -14,9 +14,7 @@ export const Router = createBrowserRouter([
             {path:'', element: <ShopGridSidebar />},
             {path:'shopDetails/:id', element: <ShopDetail />},
             {path:'signup', element: <LoginSignup />},
-            {path:'shopCart', element: <ShopCart />},
-            {path:'admin', element:<AdminAction />}
-            
+            {path:'shopCart', element: <ShopCart />},            
         ]
     }
 ])
