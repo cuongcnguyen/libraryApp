@@ -4,14 +4,14 @@
       "id": 1,
       "username": "admin",
       "password": "123456",
-      "email": "typicode",
+      "email": "admin@gmail.com",
       "role": "1"
     },
     {
       "id": 2,
-      "username": "user",
-      "password": "123456",
-      "email": "typicode",
+      "username": "user1",
+      "password": "1234567",
+      "email": "user1@gmail.com",
       "role": "2"
     }
   ],
