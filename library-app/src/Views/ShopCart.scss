@@ -95,3 +95,23 @@
         }
     }
 }
+
+//--------------------RESPONSIVE MEDIA QUERIES---------------
+
+@media screen and (max-width: 480px) {
+    .table-content table{
+        font-size: 0.5em;
+    }
+    .table-total-layout{
+        font-size: 0.5em;
+        h4.total-title{
+            font-size: 1.5em;
+        }
+    }
+    .cart-block{
+        height: 10em;
+        h1{
+            font-size: 2em;
+        }
+    }
+}
