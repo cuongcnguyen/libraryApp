@@ -16,18 +16,20 @@
     }
   ],
   "books": [
+
     {
       "id": 1,
       "image": "/images/book1.jpg",
       "star": "star here",
-      "title": "Such A Fun Age",
+      "title": "Iron Flame",
       "author": "Edward Lee",
       "rent_times": "5",
       "price": "59.95",
       "genre": "Drama",
-      "position": "A2",
+      "position": "A1",
       "in_stock": "2"
     },
+
     {
       "id": 2,
       "image": "/images/book2.jpg",
@@ -66,21 +68,21 @@
     },
     {
       "id": 5,
-      "image": "/images/book3.jpg",
+      "image": "/images/book5.jpg",
       "star": "star here",
-      "title": "Hidden Potential",
-      "author": "Adam Grant",
-      "rent_times": "3",
-      "price": "39.95",
-      "genre": "Psychology",
-      "position": "B1",
-      "in_stock": "4"
+      "title": "Democracy Awakening",
+      "author": "Edward Lee",
+      "rent_times": "8",
+      "price": "89.95",
+      "genre": "Thriller",
+      "position": "B2",
+      "in_stock": "6"
     },
     {
       "id": 6,
-      "image": "/images/book3.jpg",
+      "image": "/images/book6.jpg",
       "star": "star here",
-      "title": "Hidden Potential",
+      "title": "System Collapse",
       "author": "Adam Grant",
       "rent_times": "3",
       "price": "39.95",
@@ -171,6 +173,19 @@
       "genre": "Thriller",
       "position": "B2",
       "in_stock": "6"
+    },
+    {
+      "image": "/images/book-100.jpg",
+      "star": "a",
+      "title": "Devil's Daughter",
+      "author": "Susan Abulhawa",
+      "rent_times": "5",
+      "price": "79.95",
+      "genre": "Thriller",
+      "position": "A2",
+      "in_stock": "5",
+      "createdAt": 1701596236291,
+      "id": 14
     }
   ],
   "cart": [

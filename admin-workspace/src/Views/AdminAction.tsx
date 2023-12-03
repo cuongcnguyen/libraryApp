@@ -17,6 +17,7 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import ListItemText from "@mui/material/ListItemText";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import UserManagement from './UserManagement/UserManagement';
+import BookManagement from './BookManagement/BookManagement';
 
 
 const drawerWidth=240;
@@ -148,6 +149,34 @@ const AdminAction = () => {
                 </DrawerHeader>
                 <Divider />
                 <List>
+                <ListItem
+                    disablePadding
+                    sx={{ display: "block" }}
+                    onClick={() => setMenu("user")}
+                    >
+                    <ListItemButton
+                        sx={{
+                        minHeight: 48,
+                        justifyContent: open ? "initial" : "center",
+                        px: 2.5,
+                        }}
+                    >
+                        <ListItemIcon
+                        sx={{
+                            minWidth: 0,
+                            mr: open ? 3 : "auto",
+                            justifyContent: "center",
+                        }}
+                        >
+                        <AccountBoxIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                        primary={"User Management"}
+                        sx={{ opacity: open ? 1 : 0 }}
+                        />
+                    </ListItemButton>
+                    </ListItem>
+                  
                     <ListItem
                     disablePadding
                     sx={{ display: "block" }}
@@ -175,38 +204,14 @@ const AdminAction = () => {
                         />
                     </ListItemButton>
                     </ListItem>
-                    <ListItem
-                    disablePadding
-                    sx={{ display: "block" }}
-                    onClick={() => setMenu("user")}
-                    >
-                    <ListItemButton
-                        sx={{
-                        minHeight: 48,
-                        justifyContent: open ? "initial" : "center",
-                        px: 2.5,
-                        }}
-                    >
-                        <ListItemIcon
-                        sx={{
-                            minWidth: 0,
-                            mr: open ? 3 : "auto",
-                            justifyContent: "center",
-                        }}
-                        >
-                        <AccountBoxIcon />
-                        </ListItemIcon>
-                        <ListItemText
-                        primary={"User Management"}
-                        sx={{ opacity: open ? 1 : 0 }}
-                        />
-                    </ListItemButton>
-                    </ListItem>
+                    
                 </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />                
+                <DrawerHeader />   
                 {menu === "user" && <UserManagement />}
+                {menu === "book" && <BookManagement />}             
+                
             </Box>
         </Box>
     </div>
