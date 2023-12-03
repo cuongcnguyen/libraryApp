@@ -12,10 +12,11 @@ import { Book } from '../Interface/interface'
 import axios from 'axios'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
+import { formatCurrency } from '../utils/formatCurrency'
 
 const booklandLogo = require('../images/shop-grid-sidebar-img/logo.png');
 const ShopCart:React.FC = () => {
-    const {handleInputSearch, query, getItemQuantity,increaseCartQuantity,decreaseCartQuantity,removeFromCart, resultCart, cartItems} = useShopCartProps();
+    const {handleInputSearch, query, getItemQuantity,increaseCartQuantity,decreaseCartQuantity,removeFromCart, resultCart, cartItems, allBooks} = useShopCartProps();
     
     
   return (
@@ -117,7 +118,13 @@ const ShopCart:React.FC = () => {
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td>$500.00</td>
+                                    <td>
+                                        {formatCurrency(cartItems.reduce((total,cartItem) =>{
+                                            const item = allBooks.find(i => i.id === cartItem.id)
+                                            return total + ( Number(item?.price)  || 0 ) *cartItem.quantity
+                                        },0)
+                                        )}
+                                    </td>
                                 </tr>
                             </table>
                             <div className="total-checkout">

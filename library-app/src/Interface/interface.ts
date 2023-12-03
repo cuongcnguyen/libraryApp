@@ -48,4 +48,5 @@ export interface ShopCartProps{
     cartQuantity: number
     cartItems: CartItem[]
     resultCart:any
+    allBooks: Book[]
 }

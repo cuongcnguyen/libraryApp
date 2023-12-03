@@ -14,6 +14,7 @@ import { Book, CartItem, PaginationProps, ShopCartProps, ShopDetailProps, ShopGr
 import ShopDetail from './Views/ShopDetail';
 import queryString from 'query-string';
 import CardItem from './Components/CartItem';
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 const App : React.FC = ()=> {
 
@@ -106,7 +107,7 @@ const App : React.FC = ()=> {
   }
 
   // ---------------HANDLING CART PAGE LOGIC----------------
-  const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", [])
   const cartQuantity = cartItems.reduce( (quantity,item) => item.quantity+quantity, 0 )
 
   // ---------Calculate total price of an order--------------------
@@ -192,7 +193,7 @@ const App : React.FC = ()=> {
     //   </Routes>
     // </Router>
 
-    <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange, getItemQuantity,increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, resultCart}} />
+    <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange, getItemQuantity,increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, resultCart, allBooks}} />
   );
 }
 
