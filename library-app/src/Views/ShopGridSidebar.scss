@@ -217,4 +217,83 @@ footer .footer-container .footer-container-getintouch li{
     color: $footer-normalLetter-color;
 }
 
+// -----------Responsive, media queries------------------
+@media screen and (max-width: 1030px) {        
+    .main-sidebar .card-container{
+        justify-content: center;
+        gap: 2em;
+    }
+    .main-sidebar .card{
+        width: 40%;
+    }
+}
 
+@media screen and (max-width: 780px) {
+    .header-infobar-searchbar{
+        margin-left: 2em;
+    }
+    .footer-container .footer-container-resources{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .footer-container .footer-container-ourlinks, .footer-container .footer-container-logo{
+        display: none;
+    }
+
+    .main-sidebar{
+        flex-direction: column;
+    }
+    .main-sidebar .card-container{
+        justify-content: center;
+        gap: 0.2em;
+    }
+    .main-sidebar .card{
+        width: 49%;
+        .card-img{
+            height: 270px;
+        }
+    }
+    .header-infobar{        
+        .header-infobar-logo{            
+            flex: 2;
+            img{
+                width: 100%;
+            }
+        }
+        .header-infobar-searchbar{
+            flex: 3;
+            padding: 0;
+            margin: 0;
+        } 
+        .header-infobar-rightnav{
+            flex: 1;    
+            ul{
+                margin: 0;
+                padding: 0;  
+            }      
+            .header-infobar-rightnav-list{
+                flex-direction: column;
+                gap: 0.1em;
+            }
+        }       
+       
+    }
+    
+    .header-nav{
+        justify-content: center;
+    }
+    .header-nav-rightBtn{
+        display: none;
+    }
+    .header-nav-left{
+        font-size: smaller;
+        ul.header-nav-left-list{
+            gap: 1em;            
+        }
+        .header-nav-left-list-item-link-page,.header-nav-left-list-item-link-blog{
+            display: none;
+        }
+    }
+}

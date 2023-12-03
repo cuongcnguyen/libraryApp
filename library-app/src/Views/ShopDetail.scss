@@ -130,6 +130,48 @@ $table-border-color: #dee2e6;
     padding-bottom: 3em;
 }
 
+//--------------------RESPONSIVE MEDIA QUERIES---------------
+
+@media screen and (max-width: 780px) {
+    .col{
+        .book-image{
+            flex: 1;
+        }
+        .book-content{
+            flex: 1.5;
+            margin-left: 1.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .col{
+        img{
+            height: 310px;
+        }
+        .book-content{
+            font-size: 0.6em;
+            margin-left: 0.5em;
+            h3{
+                font-size: 1.5em;
+            }
+            .grayTitle{
+                font-size: 1em;
+            }
+            .card-addToCart{
+                padding: 0 2em;
+            }
+            .book-content-body-price{
+                margin: 0;
+                font-size: 1.3em;
+            }
+        }
+    }
+    .row2{
+        font-size: 0.6em;
+    }
+}
+
 
 
 

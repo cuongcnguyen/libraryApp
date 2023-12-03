@@ -81,9 +81,9 @@ function Header() {
                                 {/* <li className="header-nav-left-list-item"><Link to={`/`}><a href="#" className="header-nav-left-list-item-link">Home</a></Link></li> */}
                                 <li className="header-nav-left-list-item"><Link to={'/'}>Home</Link></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">About Us</a></li>
-                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Pages</a></li>
+                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link-page">Pages</a></li>
                                 <li className="header-nav-left-list-item"><Link to={'/'}>Shop</Link></li>
-                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Blog</a></li>
+                                <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link-blog">Blog</a></li>
                                 <li className="header-nav-left-list-item"><a href="#" className="header-nav-left-list-item-link">Contact Us</a></li>
                             </ul>
                         </div>
