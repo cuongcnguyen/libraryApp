@@ -23,7 +23,19 @@ export interface ShopGridSidebarProps{
     query: any,
     handleInputSearch(e:any): any,
     result: any
+    handleSelectedFilter(type: string, data: string): any
 }
+
+export interface ProductProps{
+    books: Book[]
+}
+export interface InputProps{
+    handleSelectedFilter(type: string, data: string): any
+}
+export interface SideBarProps{
+    handleResetFilter():any;
+}
+
 
 export interface ShopDetailProps{
     query: any,

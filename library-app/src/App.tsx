@@ -10,7 +10,7 @@ import ShopGridSidebar from './Views/ShopGridSidebar';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Outlet, useOutletContext } from 'react-router-dom';
 import Card from './Components/Card';
-import { Book, CartItem, PaginationProps, ShopCartProps, ShopDetailProps, ShopGridSidebarProps } from './Interface/interface';
+import {  Book, CartItem, InputProps, PaginationProps, ProductProps, ShopCartProps, ShopDetailProps, ShopGridSidebarProps, SideBarProps } from './Interface/interface';
 import ShopDetail from './Views/ShopDetail';
 import queryString from 'query-string';
 import CardItem from './Components/CartItem';
@@ -28,83 +28,145 @@ const App : React.FC = ()=> {
     }
     getAllBooks();    
   },[])
-  
-  const [books, setBooks] = useState<Book[]>([]);
 
-  // -------------All Filter maybe---------
-  const [filters, setFilters] = useState({
-    _limit: 6,
-    _page:1
-  })
 
-  // ---------Call API whenever filters change----------
-  useEffect(() => {
-    const getBook = async() =>{
-      const paramsString = queryString.stringify(filters);
-      const res = await axios.get(`http://localhost:8000/books?${paramsString}`);
-      
+  //Search and filter functionality
+  const [filter, setFilter] = useState({
+    author: "",
+    genre: "", 
+  });
+  const [books, setBooks] = useState<Book>();
 
-      const {data,pagination} = res.data;
-      
-      setBooks(data); 
-      setPagination(pagination);
+  const handleSelectedFilter = (type: string, data: string) => {
+    if (type === "author") {
+      setFilter((current) => ({ ...current, author: data }));
+    } 
+    if (type === "genre") {
+      setFilter((current) => ({ ...current, genre: data }));
     }
-    getBook();    
-  }, [filters]);  
+  };
 
-  const [selectedFilter, setSelectedFilter] = useState(null);
-  // -----------Search functionality------
-  const [query, setQuery] = useState<string>('');  
+  // -----------------Search---------------------
+  const [query, setQuery] = useState<string>('');
   const handleInputSearch = (e:any) =>{
     setQuery(e.target.value)
   }
-  const searchedBooks = books.filter((book)=> book.title.toLowerCase().includes(query.toLowerCase()));
-  // -------------Filter functionality-----------
 
-  const handleChange = (e:any) =>{
-    setSelectedFilter(e.target.value)
-  }
-  const filterBooks = (items:Book[], selected:any, query:string)=>{
-    let filteredBooks = items;
-    // Data from the search bar
-    if (query) {
-      filteredBooks = searchedBooks;
-    }
-    // Data from filter option
-    if (selected){
-      filteredBooks = filteredBooks.filter(({author, genre, title}) => author === selected || genre === selected || title === selected )
-    }
-
-    return filteredBooks.map(({id,image, title, genre, author, star, price, in_stock})=>(
-      <Card 
-        key={id}
-        id = {id}           
-        image = {image}     
-        title={title}
-        genre={genre}
-        author={author}
-        star={star}
-        price={price}
-        in_stock={in_stock}
-      />
-    ))
-  }
-  const result = filterBooks(books, selectedFilter, query);
-
-  // ------------------Pagination-------------------
+  // ---------------------Pagination------------------------
+    
   const [pagination, setPagination] = useState({
     _page:1,
     _limit:6,
     _totalRows:1
-  });
-  
-  
+  });  
   const handlePageChange = (newPage:any) =>{
-    setFilters({
-      ...filters,
+    setPagination({
+      ...pagination,
       _page: newPage,
     });
   }
+
+  useEffect(() => {
+    const getBooks = async () => {
+      let searchQuery:string = `q=${query}&${
+        filter.author && `author=${filter.author}`
+      }&${filter.genre && `genre=${filter.genre}`
+      }&_page=${pagination._page}&_limit=${pagination._limit}`;
+      console.log(searchQuery);
+  
+      const res = await axios.get(`http://localhost:8000/books?${searchQuery}`);      
+      setBooks(res.data.data);
+      setPagination(res.data.pagination);    
+      
+    };
+    getBooks();
+  }, [filter, query, pagination._page]);
+  
+//----------------------Reset Filter----------------------------
+  const handleResetFilter = () =>{
+    setFilter({
+      author: '',
+      genre: '',
+    })
+  }
+  
+  // -------------------Filter, Search functionality---------------------
+  // const [books, setBooks] = useState<Book[]>([]);
+
+  // // -------------All Filter maybe---------
+  // const [filters, setFilters] = useState({
+  //   _limit: 6,
+  //   _page:1
+  // })
+
+  // // ---------Call API whenever filters change----------
+  // useEffect(() => {
+  //   const getBook = async() =>{
+  //     const paramsString = queryString.stringify(filters);
+  //     const res = await axios.get(`http://localhost:8000/books?${paramsString}`);
+      
+
+  //     const {data,pagination} = res.data;
+      
+  //     setBooks(data); 
+  //     setPagination(pagination);
+  //   }
+  //   getBook();    
+  // }, [filters]);  
+
+  // const [selectedFilter, setSelectedFilter] = useState(null);
+  // // -----------Search functionality------
+  // const [query, setQuery] = useState<string>('');  
+  // const handleInputSearch = (e:any) =>{
+  //   setQuery(e.target.value)
+  // }
+  // const searchedBooks = books.filter((book)=> book.title.toLowerCase().includes(query.toLowerCase()));
+  // // -------------Filter functionality-----------
+
+  // const handleChange = (e:any) =>{
+  //   setSelectedFilter(e.target.value)
+  // }
+  // const filterBooks = (items:Book[], selected:any, query:string)=>{
+  //   let filteredBooks = items;
+  //   // Data from the search bar
+  //   if (query) {
+  //     filteredBooks = searchedBooks;
+  //   }
+  //   // Data from filter option
+  //   if (selected){
+  //     filteredBooks = filteredBooks.filter(({author, genre, title}) => author === selected || genre === selected || title === selected )
+  //   }
+
+  //   return filteredBooks.map(({id,image, title, genre, author, star, price, in_stock})=>(
+  //     <Card 
+  //       key={id}
+  //       id = {id}           
+  //       image = {image}     
+  //       title={title}
+  //       genre={genre}
+  //       author={author}
+  //       star={star}
+  //       price={price}
+  //       in_stock={in_stock}
+  //     />
+  //   ))
+  // }
+  // const result = filterBooks(books, selectedFilter, query);
+
+  // // ------------------Pagination-------------------
+  // const [pagination, setPagination] = useState({
+  //   _page:1,
+  //   _limit:6,
+  //   _totalRows:1
+  // });
+  
+  
+  // const handlePageChange = (newPage:any) =>{
+  //   setFilters({
+  //     ...filters,
+  //     _page: newPage,
+  //   });
+  // }
 
   // ---------------HANDLING CART PAGE LOGIC----------------
   const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", [])
@@ -193,7 +255,9 @@ const App : React.FC = ()=> {
     //   </Routes>
     // </Router>
 
-    <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange, getItemQuantity,increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, resultCart, allBooks}} />
+    <Outlet context={{getItemQuantity,increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, resultCart, allBooks, handleSelectedFilter, books, handleInputSearch, onPageChange:handlePageChange, pagination, handleResetFilter}} />
+
+    // <Outlet context={{handleChange, query,handleInputSearch,result, pagination, onPageChange:handlePageChange, getItemQuantity,increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, resultCart, allBooks}} />
   );
 }
 
@@ -202,6 +266,17 @@ export default App;
 export function useShopGridSidebarProps(){
   return useOutletContext<ShopGridSidebarProps>();
 }
+
+export function useProductProps(){
+  return useOutletContext<ProductProps>();
+}
+export function useInputProps(){
+  return useOutletContext<InputProps>();
+}
+export function useSideBarProps(){
+  return useOutletContext<SideBarProps>();
+}
+
 
 export function useShopDetailProps(){
   return useOutletContext<ShopDetailProps>();

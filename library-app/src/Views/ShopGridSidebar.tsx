@@ -26,36 +26,36 @@ import axios from 'axios';
 const booklandLogo = require('../images/shop-grid-sidebar-img/logo.png');
 
 const ShopGridSidebar:React.FC = () => {
-    const {handleChange,result,handleInputSearch,query} = useShopGridSidebarProps();
+    const {handleChange,result,handleInputSearch,query, handleSelectedFilter} = useShopGridSidebarProps();
 
-    //Search and filter functionality
-    const [filter, setFilter] = useState({
-        author: "",
-        genre: "",
-      });
-      const [books, setBooks] = useState<Book>();
+    // //Search and filter functionality
+    // const [filter, setFilter] = useState({
+    //     author: "",
+    //     genre: "",
+    //   });
+    //   const [books, setBooks] = useState<Book>();
     
-      const handleSelectedFilter = (type: string, data: string) => {
-        if (type === "author") {
-          setFilter((current) => ({ ...current, author: data }));
-        } else {
-          setFilter((current) => ({ ...current, genre: data }));
-        }
-      };
+    //   const handleSelectedFilter = (type: string, data: string) => {
+    //     if (type === "author") {
+    //       setFilter((current) => ({ ...current, author: data }));
+    //     } else {
+    //       setFilter((current) => ({ ...current, genre: data }));
+    //     }
+    //   };
     
-      const getBooks = async () => {
-        var searchQuery = `q=${query}&${
-          filter.author && `author=${filter.author}`
-        }&${filter.genre && `genre=${filter.genre}`}`;
+    //   const getBooks = async () => {
+    //     var searchQuery = `q=${query}&${
+    //       filter.author && `author=${filter.author}`
+    //     }&${filter.genre && `genre=${filter.genre}`}`;
     
-        await axios
-          .get(`http://localhost:8000/books?${searchQuery}`)
-          .then((res) => setBooks(res.data));
-      };
+    //     await axios
+    //       .get(`http://localhost:8000/books?${searchQuery}`)
+    //       .then((res) => setBooks(res.data));
+    //   };
     
-      useEffect(() => {
-        getBooks();
-      }, [filter, query]);
+    //   useEffect(() => {
+    //     getBooks();
+    //   }, [filter, query]);
 
 
     return (
@@ -66,11 +66,13 @@ const ShopGridSidebar:React.FC = () => {
                 <div className="container">
                     <div className="main-sidebar">
                         <div className="main-sidebar-sidebar">
-                            <SideBar handleChange={handleChange}/>
+                            {/* <SideBar handleChange={handleChange}/> */}
+                            <SideBar />
                         </div>
                             
                         <div className="main-sidebar-main">
-                            <Products result={result}/>
+                            {/* <Products result={result}/> */}
+                            <Products />
 
                             {/* ---------Pagination place--------------- */}
                             <Pagination />

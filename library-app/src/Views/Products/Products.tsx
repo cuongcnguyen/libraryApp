@@ -1,17 +1,30 @@
 import React from 'react'
 import './Products.scss'
 import Card from '../../Components/Card';
+import { Book } from '../../Interface/interface';
+import { useProductProps } from '../../App';
 
-interface Props{
-  result:any;
-}
 
-const Products:React.FC<Props> = (props)=> {
-  const {result}= props;
+const Products:React.FC = ()=> {
+  const {books}= useProductProps();
   return (
     <>
       <section className="card-container">        
-        {result}        
+      {books?.map((book: Book, index: number) => {
+        return (
+          <Card
+            key={index}
+            id={book.id}
+            image={book.image}
+            title={book.title}
+            genre={book.genre}
+            author={book.author}
+            star={book.star}
+            price={book.price}
+            in_stock={book.in_stock}
+          />
+        );
+      })}       
       </section>
     </>
   )
