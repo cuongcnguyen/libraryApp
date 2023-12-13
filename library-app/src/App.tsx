@@ -8,13 +8,14 @@ import './App.css';
 import LoginSignup from './Views/LoginSignup';
 import ShopGridSidebar from './Views/ShopGridSidebar';
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route, Outlet, useOutletContext } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, useOutletContext, useNavigate, useParams, useLocation } from 'react-router-dom';
 import Card from './Components/Card';
 import {  Book, CartItem, InputProps, PaginationProps, ProductProps, ShopCartProps, ShopDetailProps, ShopGridSidebarProps, SideBarProps } from './Interface/interface';
 import ShopDetail from './Views/ShopDetail';
 import queryString from 'query-string';
 import CardItem from './Components/CartItem';
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import { AiOutlineConsoleSql } from "react-icons/ai";
 
 const App : React.FC = ()=> {
 
@@ -65,21 +66,28 @@ const App : React.FC = ()=> {
       _page: newPage,
     });
   }
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  
 
   useEffect(() => {
-    const getBooks = async () => {
+    const getBooks = async () => {      
+
+
       let searchQuery:string = `q=${query}&${
         filter.author && `author=${filter.author}`
       }&${filter.genre && `genre=${filter.genre}`
       }&_page=${pagination._page}&_limit=${pagination._limit}`;
-      console.log(searchQuery);
-  
-      const res = await axios.get(`http://localhost:8000/books?${searchQuery}`);      
-      setBooks(res.data.data);
-      setPagination(res.data.pagination);    
       
+  
+      const res = await axios.get(`http://localhost:8000/books?${searchQuery}`);    
+        
+      setBooks(res.data.data);
+      setPagination(res.data.pagination);          
     };
     getBooks();
+    
   }, [filter, query, pagination._page]);
   
 //----------------------Reset Filter----------------------------

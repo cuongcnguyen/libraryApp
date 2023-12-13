@@ -112,7 +112,7 @@ const LoginSignup = () => {
           
           <div className="submit-container">
             
-            <button className={feature==='Sign Up'?'submit':'submit gray'} onClick={()=>{setFeature('Sign Up')}}>
+            <button type='button' className={feature==='Sign Up'?'submit':'submit gray'} onClick={()=>{setFeature('Sign Up')}}>
               Sign Up
             </button>
             <button type='submit' className={feature==='Log In'?'submit':'submit gray'} onClick={()=>{ setFeature('Log In') } }>

@@ -13,10 +13,57 @@
       "password": "1234567",
       "role": "2",
       "id": 2
+    },
+    {
+      "username": "user2",
+      "email": "user2@gmail.com",
+      "password": "123",
+      "role": "2",
+      "createdAt": 1702253380343,
+      "id": 3
+    },
+    {
+      "username": "user3",
+      "email": "user3@gmail.com",
+      "password": "1234",
+      "role": 2,
+      "createdAt": 1702403153298,
+      "id": 4
+    },
+    {
+      "username": "user4",
+      "email": "user3@gmail.com",
+      "password": "1234",
+      "role": 2,
+      "createdAt": 1702403445687,
+      "id": 5
+    },
+    {
+      "username": "user6",
+      "email": "user6@gmail.com",
+      "password": "12345",
+      "role": 2,
+      "createdAt": 1702403705877,
+      "id": 6
+    },
+    {
+      "username": "user10",
+      "email": "user10@gmail.com",
+      "password": "12345",
+      "role": 2,
+      "createdAt": 1702411568572,
+      "id": 7
+    },
+    {
+      "username": "user11",
+      "email": "user11@gmail.com",
+      "password": "123",
+      "role": 2,
+      "createdAt": 1702411722050,
+      "id": 8
     }
   ],
   "books": [
-
     {
       "id": 1,
       "image": "/images/book1.jpg",
@@ -29,7 +76,6 @@
       "position": "A1",
       "in_stock": "2"
     },
-
     {
       "id": 2,
       "image": "/images/book2.jpg",
@@ -186,6 +232,19 @@
       "in_stock": "5",
       "createdAt": 1701596236291,
       "id": 14
+    },
+    {
+      "image": "images/book-100.jpg",
+      "star": "a",
+      "title": "Silver Flame",
+      "author": "Adam Grant",
+      "rent_times": "4",
+      "price": "49.95",
+      "genre": "Thriller",
+      "position": "A1",
+      "in_stock": "4",
+      "createdAt": 1702253867860,
+      "id": 15
     }
   ],
   "cart": [

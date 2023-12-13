@@ -69,7 +69,7 @@ const LoginSignup = () => {
   };
 
   
-  const [feature, setFeature] = useState('Sign Up');
+  const [feature, setFeature] = useState('Log In');
 
 
   return (
@@ -80,17 +80,7 @@ const LoginSignup = () => {
             <div className="text">{feature}</div>
             <div className="underline"></div>
           </div>
-          <div className="inputs-field">
-
-            {/* Show Input Name if the feature is Sign Up, none if the feature is Log In */}
-
-            {feature==='Sign Up'
-              ?<div className="input">
-                <img src={user_icon} alt="" />
-                <input type="text" placeholder='Name' />
-              </div>
-              :<div className=""></div>
-            }
+          <div className="inputs-field">            
             
             <div className="input">
               <img src={email_icon} alt="" />
@@ -101,18 +91,20 @@ const LoginSignup = () => {
               <input type="password" placeholder='Password' onChange={handleChange("password")}/>
             </div>
           </div>
-          {/* Show Forgot Password if the feature is Log In */}
-          {feature === 'Sign Up'
-            ? <div></div>
-            :<div className="forgot-pass">Forgot password? <span><a href="">Click here</a></span></div>
-          }
+          
+          <div className="forgot-pass">Forgot password? <span><a href="">Click here</a></span></div>
+          
           
           <div className="submit-container">
             
-            <button className={feature==='Sign Up'?'submit':'submit gray'} onClick={()=>{setFeature('Sign Up')}}>
+            <button type='button' className='submit gray' onClick={
+              ()=>{                
+                navigate('signup');
+              }
+            }>
               Sign Up
             </button>
-            <button type='submit' className={feature==='Log In'?'submit':'submit gray'} onClick={()=>{ setFeature('Log In') } }>
+            <button type='submit' className='submit' >
               Log In
             </button>
             
