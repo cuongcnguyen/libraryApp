@@ -226,6 +226,7 @@ const UserManagement:React.FC = () => {
             <TextField
             label="Email"
             variant="outlined"
+            type="email"
             value={email}
             onChange={handleChange(setEmail)}
             />
