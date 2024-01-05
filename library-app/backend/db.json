@@ -69,6 +69,21 @@
       "role": "2",
       "createdAt": 1702435361583,
       "id": 9
+    },
+    {
+      "username": "user15",
+      "email": "user15@gmail.com",
+      "password": "123456789",
+      "role": 2,
+      "createdAt": 1702437481134,
+      "id": 10
+    },
+    {
+      "username": "user16",
+      "email": "user16@gmail.com",
+      "password": "12",
+      "role": "2",
+      "id": 11
     }
   ],
   "books": [
@@ -253,6 +268,19 @@
       "in_stock": "4",
       "createdAt": 1702253867860,
       "id": 15
+    },
+    {
+      "image": "/images/book-100.jpg",
+      "star": "abc",
+      "title": "abc",
+      "author": "abc",
+      "rent_times": "12",
+      "price": "12.95",
+      "genre": "Thriller",
+      "position": "A1",
+      "in_stock": "12",
+      "createdAt": 1702437591005,
+      "id": 16
     }
   ],
   "cart": [
