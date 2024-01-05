@@ -34,7 +34,7 @@ const LoginSignup = () => {
       };
 
       axios
-        .get("http://localhost:8000/users", {
+        .get("https://libserver.onrender.com/users", {
           params: {
             email: values.email,
           },

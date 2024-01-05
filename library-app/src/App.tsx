@@ -23,7 +23,7 @@ const App : React.FC = ()=> {
   const [allBooks, setAllBooks] = useState<Book[]>([]);
   useEffect(()=>{
     const getAllBooks = async() =>{
-      const res = await axios.get('http://localhost:8000/books');                
+      const res = await axios.get('https://libserver.onrender.com/books');                
       setAllBooks(res.data);
       
     }
@@ -81,7 +81,7 @@ const App : React.FC = ()=> {
       }&_page=${pagination._page}&_limit=${pagination._limit}`;
       
   
-      const res = await axios.get(`http://localhost:8000/books?${searchQuery}`);    
+      const res = await axios.get(`https://libserver.onrender.com/books?${searchQuery}`);    
         
       setBooks(res.data.data);
       setPagination(res.data.pagination);          

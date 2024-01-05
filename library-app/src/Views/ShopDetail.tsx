@@ -33,7 +33,7 @@ const ShopDetail:React.FC =() => {
     // -----------Call API only when id changes---------------------
     useEffect(()=>{
         const getBooks = async() =>{
-            const res = await axios.get(`http://localhost:8000/books/${id}`);
+            const res = await axios.get(`https://libserver.onrender.com/books/${id}`);
             setBooks(res.data);
         } 
         getBooks();
