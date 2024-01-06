@@ -57,7 +57,7 @@ const UserManagement:React.FC = () => {
         const fetchData = async () => {
           try {
             const response = await axios.get<ListUser[]>(
-              "http://localhost:8000/users/?role=" + 2
+              "https://libserver.onrender.com/users/?role=" + 2
             );
             setUser(response.data);
             setIsUserUpdated(false);
@@ -78,7 +78,7 @@ const UserManagement:React.FC = () => {
         const checkEmail = async (): Promise<boolean> => {
         let isCheck = false;
         await axios
-            .get("http://localhost:8000/users", {
+            .get("https://libserver.onrender.com/users", {
             params: {
                 email: email,
             },
@@ -117,7 +117,7 @@ const UserManagement:React.FC = () => {
             },
             };
             await axios.post(
-            "http://localhost:8000/users",
+            "https://libserver.onrender.com/users",
             {
                 username: username,
                 email: email,
@@ -149,7 +149,7 @@ const UserManagement:React.FC = () => {
         try {    
             await axios
             .put(
-                "http://localhost:8000/users/" + idEdit,
+                "https://libserver.onrender.com/users/" + idEdit,
                 {
                 username: usernameEdit,
                 email: emailEdit,
@@ -193,7 +193,7 @@ const UserManagement:React.FC = () => {
     };
     const handleDeleteUser = () => {
         axios
-            .delete("http://localhost:8000/users/" + idEdit)
+            .delete("https://libserver.onrender.com/users/" + idEdit)
             .then((response) => {
                 setIsUserUpdated(true);
                 alert("User deleted successfully");

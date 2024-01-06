@@ -45,7 +45,7 @@ const Signup: React.FC = () => {
       };
 
       axios
-        .post("http://localhost:8000/users", {
+        .post("https://libserver.onrender.com/users", {
           username: values.username,
           email: values.email,
           password: values.password,

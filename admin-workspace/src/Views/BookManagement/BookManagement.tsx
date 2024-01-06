@@ -91,7 +91,7 @@ const BookManagement: React.FC = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:8000/books")
+        .get("https://libserver.onrender.com/books")
         .then((response) => {
           setBooks(response.data);
           setIsBookUpdated(false);
@@ -182,7 +182,7 @@ const BookManagement: React.FC = () => {
   const checkBook = async (): Promise<boolean> => {
     let isCheck = false;
     await axios
-      .get("http://localhost:8000/books", {
+      .get("https://libserver.onrender.com/books", {
         params: {
           title: book.title,
         },
@@ -220,7 +220,7 @@ const BookManagement: React.FC = () => {
         },
       };
       await axios.post(
-        "http://localhost:8000/books",
+        "https://libserver.onrender.com/books",
         JSON.stringify(book),
         config
       );
@@ -250,7 +250,7 @@ const BookManagement: React.FC = () => {
     }
     try {
       await axios
-        .put("http://localhost:8000/books/" + bookEdit.id, bookEdit, {
+        .put("https://libserver.onrender.com/books/" + bookEdit.id, bookEdit, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -279,7 +279,7 @@ const BookManagement: React.FC = () => {
   };
   const handleDeleteBook = () => {
     axios
-      .delete("http://localhost:8000/books/" + bookEdit.id)
+      .delete("https://libserver.onrender.com/books/" + bookEdit.id)
       .then((response) => {
         setIsBookUpdated(true);
         console.log("User deleted successfully");
